@@ -1,0 +1,23 @@
+form {
+    width: 90%;
+    margin: 0px auto;
+    // position: relative;
+    // top: 20px;
+    // width: 400px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    mat-form-field {
+      width: 100%;
+    }
+    mat-card-actions {
+      display: flex;
+      justify-content: center;
+    }
+    mat-card-header {
+        display: flex;
+        justify-content: center;
+    }
+  }

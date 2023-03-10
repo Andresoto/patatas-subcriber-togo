@@ -1,0 +1,43 @@
+<form [formGroup]="form" (ngSubmit)="doLogin()">
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+              <div class="col">
+                <mat-form-field>
+                  <mat-label>Nombre de usuario</mat-label>
+                  <input placeholder="Nombre de usuario" formControlName="userName" matInput type="text">
+                  <div class="messages" *ngIf="form.controls.userName.touched && form.controls.userName.invalid">
+                    <mat-error *ngIf="form.controls.userName.hasError('required')">
+                      Este campo es requerido
+                    </mat-error>
+                  </div>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <mat-form-field>
+                        <mat-label>Contraseña</mat-label>
+                        <input placeholder="Contraseña" formControlName="password" matInput type="password">
+                        <div class="messages" *ngIf="form.controls.password.touched && form.controls.password.invalid">
+                          <mat-error *ngIf="form.controls.password.hasError('required')">
+                            Este campo es requerido
+                          </mat-error>
+                        </div>
+                    </mat-form-field>
+                </div>
+            </div>
+            
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit">
+            <span>Ingresar</span>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+</form>
+
