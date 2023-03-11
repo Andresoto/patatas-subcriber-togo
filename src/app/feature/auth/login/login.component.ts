@@ -11,8 +11,8 @@ import { AuthService } from '../shared/services/auth.service';
 export class LoginComponent {
 
   form = this.formBuilder.nonNullable.group({
-    userName: ['', [Validators.required]],
-    password: ['', [Validators.required]]
+    userName: ['patata', [Validators.required]],
+    password: ['MrPotat0', [Validators.required]]
   });
 
   constructor(

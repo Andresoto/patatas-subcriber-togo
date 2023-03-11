@@ -1,0 +1,22 @@
+.boton {
+  background-color: rgb(0, 43, 136);
+  color: white;
+}
+
+.subsForm {
+  position: fixed;
+  top: 0;
+  left: 40%;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: all ease-out 0.5s;
+  transform: translateX(100%);
+}
+
+.subsForm.active {
+  transform: translateX(0);
+}

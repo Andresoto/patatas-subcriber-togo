@@ -1,0 +1,110 @@
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="save()">
+        <div class="row mt-5">
+            <div class="col-12 d-flex justify-content-center">
+                <h3>Agregar Subscriptores</h3>
+            </div>
+            
+
+            <div formArrayName="subscribers" *ngFor="let subscribers of subscribersField.controls; let i=index">
+                <div [formGroupName]="i">
+                    <div class="row">
+                        <h6>Subscriptor {{i+1}}</h6>
+                        <div class="col-6">
+                            <mat-form-field>
+                                <mat-label>Nombre</mat-label>
+                                <input placeholder="Nombre" formControlName="name" matInput type="text">
+                                <!-- <div class="messages" *ngIf="validField()">
+                                  <mat-error *ngIf="form.controls.userName.hasError('required')">
+                                    Este campo es requerido
+                                  </mat-error>
+                                </div> -->
+                              </mat-form-field>
+                        </div>
+
+                        <div class="col-6">
+                            <mat-form-field>
+                                <mat-label>Correo</mat-label>
+                                <input placeholder="Correo" formControlName="email" matInput type="email">
+                                <!-- <div class="messages" *ngIf="validField()">
+                                  <mat-error *ngIf="form.controls.userName.hasError('required')">
+                                    Este campo es requerido
+                                  </mat-error>
+                                </div> -->
+                              </mat-form-field>
+                          </div>
+                          
+                          <div class="col-6">
+                              <mat-form-field>
+                                <mat-label>Número</mat-label>
+                                <input placeholder="Número" formControlName="phoneNumber" matInput type="number">
+                                <!-- <div class="messages" *ngIf="validField()">
+                                  <mat-error *ngIf="form.controls.userName.hasError('required')">
+                                    Este campo es requerido
+                                  </mat-error>
+                                </div> -->
+                              </mat-form-field>
+                        </div>
+      
+                          <div class="col-6">
+                              <mat-form-field>
+                                <mat-label>Trabajo</mat-label>
+                                <input placeholder="Trabajo" formControlName="jobTitle" matInput type="text">
+                                <!-- <div class="messages" *ngIf="validField()">
+                                  <mat-error *ngIf="form.controls.userName.hasError('required')">
+                                    Este campo es requerido
+                                  </mat-error>
+                                </div> -->
+                              </mat-form-field>
+                        </div>
+                        <div class="col-6">
+                            <mat-form-field>
+                              <mat-label>Area</mat-label>
+                              <input placeholder="Area" formControlName="area" matInput type="text">
+                              <!-- <div class="messages" *ngIf="validField()">
+                                <mat-error *ngIf="form.controls.userName.hasError('required')">
+                                  Este campo es requerido
+                                </mat-error>
+                              </div> -->
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-6" >
+                            <mat-form-field>
+                                <mat-label>Ciudad</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let countrie of countries" [value]="countrie.Code"> {{countrie.Name}} </mat-option>
+                                </mat-select>
+                                
+                                <!-- <div class="messages" *ngIf="validField()">
+                                  <mat-error *ngIf="form.controls.userName.hasError('required')">
+                                    Este campo es requerido
+                                  </mat-error>
+                                </div> -->
+                              </mat-form-field>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <button class="btn btn-primary me-1" (click)="addSubscriberFields()">Agregar Subscriptor</button>
+                    <button class="btn btn-primary" type="submit">Guarda</button>
+                </div>
+            </div>
+
+
+        </div>
+            <div class="col-12">
+
+
+            <div class="col-6">
+                
+            </div>
+        </div>
+
+    </form>
+</div>
