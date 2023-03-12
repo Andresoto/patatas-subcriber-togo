@@ -1,0 +1,27 @@
+footer{
+    bottom: 0;
+    left: 0;
+    padding: 1rem 8%;
+    background-color: #212529;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .social-icons-container, .footer-menu-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  
+  .foot {
+    color: rgb(146, 146, 146);
+  }
+  
+  .foot span {
+    color: var(--alt-color);
+    font-weight: bold;
+  }

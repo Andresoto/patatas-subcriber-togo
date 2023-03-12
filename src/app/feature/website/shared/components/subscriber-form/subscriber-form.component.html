@@ -1,12 +1,91 @@
 <div class="continer">
-    <div class="row">
-        
+    <form [formGroup]="form" (ngSubmit)="update()">
+        <div class="row mx-3">
+            <div class="col-12 d-flex justify-content-center my-3">
+                <h3>Actualizar</h3>
+            </div>
 
+    
+            <div class="col-6">
+                <mat-form-field>
+                    <mat-label>Nombre</mat-label>
+                    <input placeholder="Nombre" formControlName="Name" matInput type="text">
+                    <!-- <div class="messages" *ngIf="validField()">
+                      <mat-error *ngIf="form.controls.userName.hasError('required')">
+                        Este campo es requerido
+                      </mat-error>
+                    </div> -->
+                  </mat-form-field>
+            </div>
+    
+            <div class="col-6">
+                <mat-form-field>
+                    <mat-label>Correo</mat-label>
+                    <input placeholder="Correo" formControlName="Email" matInput type="email">
+                    <!-- <div class="messages" *ngIf="validField()">
+                      <mat-error *ngIf="form.controls.userName.hasError('required')">
+                        Este campo es requerido
+                      </mat-error>
+                    </div> -->
+                  </mat-form-field>
+              </div>
+              
+              <div class="col-6">
+                  <mat-form-field>
+                    <mat-label>Número</mat-label>
+                    <input placeholder="Número" formControlName="PhoneNumber" matInput type="number">
+                    <!-- <div class="messages" *ngIf="validField()">
+                      <mat-error *ngIf="form.controls.userName.hasError('required')">
+                        Este campo es requerido
+                      </mat-error>
+                    </div> -->
+                  </mat-form-field>
+            </div>
+    
+              <div class="col-6">
+                  <mat-form-field>
+                    <mat-label>Trabajo</mat-label>
+                    <input placeholder="Trabajo" formControlName="JobTitle" matInput type="text">
+                    <!-- <div class="messages" *ngIf="validField()">
+                      <mat-error *ngIf="form.controls.userName.hasError('required')">
+                        Este campo es requerido
+                      </mat-error>
+                    </div> -->
+                  </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field>
+                  <mat-label>Area</mat-label>
+                  <input placeholder="Area" formControlName="Area" matInput type="text">
+                  <!-- <div class="messages" *ngIf="validField()">
+                    <mat-error *ngIf="form.controls.userName.hasError('required')">
+                      Este campo es requerido
+                    </mat-error>
+                  </div> -->
+                </mat-form-field>
+            </div>
 
-
-        <div class="col-12 d-flex justify-content-center">
-            <button class="btn btn-light text-black" (click)="closeSubsForm()">cerrar</button>
-            <button class="btn btn-primary">Guardar</button>
+            <div class="col-6" >
+                <mat-form-field>
+                    <mat-label>Ciudad</mat-label>
+                    <mat-select formControlName="CountryCode">
+                        <mat-option *ngFor="let countrie of countries" [value]="countrie.Code"> {{countrie.Name}} </mat-option>
+                    </mat-select>
+                    
+                    <!-- <div class="messages" *ngIf="validField()">
+                      <mat-error *ngIf="form.controls.userName.hasError('required')">
+                        Este campo es requerido
+                      </mat-error>
+                    </div> -->
+                  </mat-form-field>
+            </div>
+    
+    
+    
+            <div class="col-12 mt-3 d-flex justify-content-center">
+                <button class="btn btn-light text-black" (click)="closeSubsForm()">Cerrar</button>
+                <button class="btn btn-primary">Guardar</button>
+            </div>
         </div>
-    </div>
+    </form>
 </div>

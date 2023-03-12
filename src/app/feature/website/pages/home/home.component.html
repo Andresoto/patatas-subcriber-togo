@@ -26,18 +26,30 @@
                         <td> {{subscriber.CountryName}} </td>
                         <td> {{subscriber.PhoneCodeAndNumber}} </td>
                         <td>
-                            <button class="btn boton btn-sm me-1" (click)="showForm()">Actualizar</button>
-                            <button class="btn btn-danger btn-sm">eliminar</button>
+                            <button class="btn button btn-sm me-1" (click)="showForm(subscriber.Id)">Actualizar</button>
+                            <button class="btn btn-danger btn-sm" (click)="deleteSub(subscriber.Id)">eliminar</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+        
+        <div class="col-12 d-flex justify-content-center">
+            <nav aria-label="...">
+                <ul class="pagination">
+
+                  <li class="page-item" *ngFor="let in of [].constructor(page); let i = index">
+                    <a class="page-link" (click)="pagination(i+1)">{{i+1}}</a>
+                </li>
+              
+                </ul>
+              </nav>              
+        </div>
     </div>
 
-    <div class="subsForm" [class.active]="subsForm" >
+    <div class="subsForm" *ngIf="subsForm" [class.active]="subsForm" >
         <app-subscriber-form 
-            *ngIf="subsForm"
+            [id]="idUpdate"
             (close)="closeSubsForm($event)"
         ></app-subscriber-form>
     </div>

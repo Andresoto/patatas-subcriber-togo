@@ -4,9 +4,16 @@
             <div class="col-12 d-flex justify-content-center">
                 <h3>Agregar Subscriptores</h3>
             </div>
+
+            <div class="row">
+              <div class="col-12 d-flex justify-content-end my-3">
+                <button class="btn btn-primary me-1" (click)="addSubscriberFields()">Agregar Subscriptor</button>
+                <!-- <button class="btn btn-primary me-1" (click)="deleteSubscriberFields()">Quitar</button> -->
+              </div>
+          </div>
             
 
-            <div formArrayName="subscribers" *ngFor="let subscribers of subscribersField.controls; let i=index">
+            <div formArrayName="subscribers" *ngFor="let subscribers of subscribersField.controls; let i=index" class="mb-4">
                 <div [formGroupName]="i">
                     <div class="row">
                         <h6>Subscriptor {{i+1}}</h6>
@@ -72,7 +79,7 @@
                         <div class="col-6" >
                             <mat-form-field>
                                 <mat-label>Ciudad</mat-label>
-                                <mat-select>
+                                <mat-select formControlName="countryCode">
                                     <mat-option *ngFor="let countrie of countries" [value]="countrie.Code"> {{countrie.Name}} </mat-option>
                                 </mat-select>
                                 
@@ -83,6 +90,8 @@
                                 </div> -->
                               </mat-form-field>
                         </div>
+
+                        
                     </div>
 
 
@@ -91,19 +100,12 @@
 
             <div class="row">
                 <div class="col-12 d-flex justify-content-center">
-                    <button class="btn btn-primary me-1" (click)="addSubscriberFields()">Agregar Subscriptor</button>
-                    <button class="btn btn-primary" type="submit">Guarda</button>
+                  <button class="btn btn-light text-black me-1" (click)="cancel()">Cancelar</button>
+                  <button class="btn btn-primary" type="submit">Guardar</button>
                 </div>
             </div>
 
 
-        </div>
-            <div class="col-12">
-
-
-            <div class="col-6">
-                
-            </div>
         </div>
 
     </form>

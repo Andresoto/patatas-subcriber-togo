@@ -1,0 +1,22 @@
+<!-- <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+        Bootstrap
+      </a>
+    </div>
+  </nav> -->
+
+  <nav class="navbar navbar-dark bg-dark ">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="../../../../assets/img/patata.png" alt="Bootstrap" width="45" height="45">
+        </a>
+      
+      <p class="navbar-brand m-0">Patatas Subscribers ToGo</p>
+
+      <div *ngIf="showLogOut">
+          <button class="btn btn-sm btn-primary" (click)="logOut()">Cerrar Sesión</button>
+      </div>
+    </div>
+  </nav>

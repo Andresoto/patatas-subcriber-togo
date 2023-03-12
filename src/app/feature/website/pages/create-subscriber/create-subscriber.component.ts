@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Countries } from '../../shared/models/countries.model';
+import { Subscribers } from '../../shared/models/subscribers.model';
 import { SubscribersService } from '../../shared/services/subscribers.service';
 
 @Component({
@@ -16,7 +18,8 @@ export class CreateSubscriberComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private subscribersService: SubscribersService
+    private subscribersService: SubscribersService,
+    private router: Router
   ) { 
     this.buildForm();
   }
@@ -42,12 +45,13 @@ export class CreateSubscriberComponent implements OnInit {
 
   private createSubscriberFields() {
     return this.formBuilder.group({
-      name: ['', [Validators.required]],
-      email: ['' , [Validators.required]],
+      name: ['prueba 1s', [Validators.required]],
+      email: ['correo@mail.com' , [Validators.required]],
       countryCode: ['', [Validators.required]],
       phoneNumber: [''],
       jobTitle: [''],
       area: [''],
+      topics: [[]],
     });
   }
 
@@ -60,6 +64,31 @@ export class CreateSubscriberComponent implements OnInit {
   }
 
   save() {
-    console.log(this.form.value);
+    // console.log(this.form.value);
+
+    let data: Subscribers;
+
+    if (this.form.valid) {
+      
+      // console.log(this.form.getRawValue());
+      data = this.form.getRawValue();
+      console.log(data);
+      this.subscribersService.createSubscriber(data)
+      .subscribe(() => {
+        this.router.navigate(['app/home']);
+      });
+
+    } else {
+      this.form.markAllAsTouched();
+    }
+
+  }
+
+  cancel() {
+    this.router.navigate(['/app/home'])
+  }
+
+  deleteSubscriberFields() {
+    // this.subscribersField.
   }
 }

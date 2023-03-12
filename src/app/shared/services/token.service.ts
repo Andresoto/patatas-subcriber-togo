@@ -1,16 +1,20 @@
 import { Injectable } from '@angular/core';
 import { getCookie, setCookie, removeCookie } from "typescript-cookie";
 import jwt_decode, {JwtPayload} from "jwt-decode";
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TokenService {
 
+  existToken$ = new BehaviorSubject<boolean>(false);
+
   constructor() { }
 
   saveToken(token: string) {
     setCookie('token', token, { expires: 365, path:'/' });
+    this.existToken$.next(true);
   }
 
   getToken() {
@@ -20,12 +24,13 @@ export class TokenService {
 
   removeToken() {
     removeCookie('token');
+    this.existToken$.next(false);
   }
 
   isValidToken() {
     const token = this.getToken();
     if (!token) {
-      return false
+      return false;
     }
     const decodeToken = jwt_decode<JwtPayload>(token);
     if (decodeToken && decodeToken?.exp) {
