@@ -23,8 +23,6 @@ export class LoginComponent {
 
   doLogin() {
     if (this.form.valid) {
-      // this.status = 'loading';
-      console.log(this.form.getRawValue());
       const { userName, password } = this.form.getRawValue();
       this.authService.login(userName, password)
       .subscribe(() =>{

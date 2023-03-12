@@ -1,3 +1,8 @@
+export interface DataSubscriber {
+    Count: number;
+    Data:  Subscribers[];
+}
+
 export interface Subscribers {
     SystemId:                     null;
     Area:                         string;

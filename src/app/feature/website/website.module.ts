@@ -6,7 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { SubscriberFormComponent } from './shared/components/subscriber-form/subscriber-form.component';
 import { CreateSubscriberComponent } from './pages/create-subscriber/create-subscriber.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     WebsiteRoutingModule,
     SharedModule,
+    FormsModule,
     ReactiveFormsModule
   ]
 })

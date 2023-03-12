@@ -34,6 +34,7 @@ export class TokenService {
     }
     const decodeToken = jwt_decode<JwtPayload>(token);
     if (decodeToken && decodeToken?.exp) {
+      this.existToken$.next(true);
       const tokenDate = new Date(0);
       tokenDate.setUTCSeconds(decodeToken.exp);
       const today = new Date();
