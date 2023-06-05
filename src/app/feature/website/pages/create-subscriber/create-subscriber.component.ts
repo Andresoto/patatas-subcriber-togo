@@ -100,4 +100,9 @@ export class CreateSubscriberComponent implements OnInit {
   cancel(): void {
     this.router.navigate(['/app/home']);
   }
+
+  delete(index: number) {
+    //para eliminar un form de la lista de forms
+    this.subscribersField.removeAt(index);
+  } 
 }
