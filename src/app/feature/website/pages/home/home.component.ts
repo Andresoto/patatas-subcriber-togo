@@ -74,7 +74,8 @@ export class HomeComponent implements OnInit {
       page: page,
       count: this.quantity,
     };
-    this.subscribersService.getAllSubscribers(params).subscribe((data: DataSubscriber) => {
+    this.subscribersService.getAllSubscribers(params)
+    .subscribe((data: DataSubscriber) => {
       this.subscribers = data.Data;
     });
   }

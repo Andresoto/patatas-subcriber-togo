@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container mb-5">
   <div class="row mt-5">
     <div class="col-6 mb-3">
       <h3>Subscriptores</h3>
     </div>
     <div class="col-6 d-flex justify-content-end mb-3">
       <button class="btn btn-primary" [routerLink]="['/app/create']">
-        Crear subscritor
+        Crear suscriptor <i class="fa-solid fa-plus"></i>
       </button>
     </div>
     <div class="col-12">
@@ -31,14 +31,16 @@
               <button
                 class="btn button btn-sm me-1"
                 (click)="showForm(subscriber.Id)"
+                title="Editar"
               >
-                Actualizar
+              <i class="fa-solid fa-pen-to-square"></i>
               </button>
               <button
                 class="btn btn-danger btn-sm"
                 (click)="deleteSub(subscriber.Id)"
+                title="Eliminar"
               >
-                eliminar
+              <i class="fa-solid fa-trash-can"></i>
               </button>
             </td>
           </tr>
@@ -46,8 +48,8 @@
       </table>
     </div>
 
-    <div class="col-12 d-flex justify-content-center">
-      <nav aria-label="...">
+    <div class="col-12 d-flex justify-content-center mb-5">
+      <nav aria-label="..." class='mb-3'>
         <ul class="pagination">
           <li
             class="page-item"
@@ -59,6 +61,7 @@
       </nav>
     </div>
   </div>
+</div>
 
   <div class="subsForm" *ngIf="subsForm" [class.active]="subsForm">
     <app-subscriber-form
@@ -66,4 +69,3 @@
       (close)="closeSubsForm($event)"
     ></app-subscriber-form>
   </div>
-</div>
