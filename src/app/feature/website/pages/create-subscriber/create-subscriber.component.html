@@ -1,4 +1,8 @@
 <div class="container">
+  <div class="input-group mt-4">
+    <input type="text" id="prueba" class="input-group__input" required>
+    <label for="prueba" class="input-group__label">Prueba</label>
+  </div>
   <form [formGroup]="form" (ngSubmit)="save()">
     <div class="row mt-5">
       <div class="col-12 d-flex justify-content-center">
@@ -8,7 +12,7 @@
       <div class="row">
         <div class="col-12 d-flex justify-content-end my-3">
           <button class="btn btn-primary me-1" (click)="addSubscriberFields()">
-            Agregar subscriptor
+            Agregar subscriptor <i class="fa-solid fa-plus"></i>
           </button>
         </div>
       </div>
@@ -135,10 +139,10 @@
 
       <div class="row mb-5">
         <div class="col-12 d-flex justify-content-center mb-5">
+          <button class="btn btn-primary" type="submit"><i class="fa-regular fa-floppy-disk"></i> Guardar</button>
           <button class="btn btn-light text-black me-1" (click)="cancel()">
-            Cancelar
+            <i class="fa-solid fa-xmark"></i> Cancelar
           </button>
-          <button class="btn btn-primary" type="submit">Guardar</button>
         </div>
       </div>
     </div>
